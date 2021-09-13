@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <head>
+        <title> A sample web page</title>
+        <script>
+            function changeImage()
+            {
+                const value = document.getElementById("inputBox").value;
+                alert(`Hello ${value}`);
+                
+                // Change the image accordingly..
+                var url = "https://joeschmoe.io/api/v1/jon";
+                //document.getElementByClass("imageDisplay").src=url;
+                document.getElementById("imageDisplay").src=url;
+            }
+        </script>
+    </head>
+    <body>
+        <section>
+            <div class="inputArea">
+                <label>Enter your name to say about your personality..</label>
+                <input type=text id="inputBox">
+                <button onclick="changeImage()"> Click here..!!</button>
+            </div>
+
+            <div class="displayArea">
+                <img src="testHorse.png" height=50% width=50% id="imageDisplay">
+            </div>
+        </section>
+    </body>
+</html> 

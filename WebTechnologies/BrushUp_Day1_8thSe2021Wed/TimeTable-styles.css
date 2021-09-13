@@ -1,0 +1,27 @@
+table
+{
+    border-collapse:collapse;
+    border: none;
+    text-align:center;
+}
+
+th{
+    background-color:orange;
+    margin:5px;
+}
+th:hover{
+    background-color:orangered;
+}
+td, th{
+    padding:15px;
+    border:none;
+    border-bottom:rgb(245, 210, 10) solid 1px;
+    font-family:arial;
+}
+th{
+    font-family:Roboto;
+}
+tr:hover
+{
+    background-color:lightgoldenrodyellow;
+}
