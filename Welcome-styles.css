@@ -1,0 +1,87 @@
+header{
+    background-color:gainsboro;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    text-align:center;
+    display:inline-block;
+    width:100%;
+}
+
+
+/*Styling the appearance as fexi-boxes..*/
+.flex-container{
+    display:flex;
+    background-color:linen;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    text-align:center;
+}
+
+.flex-container > div {
+    background-color: khaki;
+    margin:10px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.container{
+    position:absolute;
+}
+
+.container-column{
+    margin-left:2%;
+    float:left;
+    width:33.33%;
+    border-top-left-radius:10px;
+    border-bottom-right-radius:10px;
+}
+img{
+    width:50px;
+    height:100px;
+}
+p{
+    font-size:small;
+    margin:0px;
+}
+
+img{
+    width:100%;
+    height:auto;
+    opacity:1;
+}
+/*Overlaying the text on the image in a particular position*/
+.overlay-text{
+    position: absolute;
+    top: 25%;  /*Use top, bottom, left, right for setting accordingly*/
+    width:30%;  /*----------------- Adjust width based on the no. of blocks are placed...*/
+    justify-content:center;
+    text-align: center;
+    font-size: 18px;
+    font-family:"Helvetica";
+    color:orangered;
+    /*background-color:lightgrey;*/
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:20px;
+}
+
+.container-column:hover{
+    cursor:pointer;
+    border-radius:10px;
+    opacity:0.9;
+    background-color:moccasin;
+    border:1px solid burlywood;
+}
+
+.container-column >img:hover{
+    cursor:pointer;
+    opacity:1;
+    border-radius:15px;
+    
+}
+
+.overlay-text:hover{
+    color:white;
+}
+
