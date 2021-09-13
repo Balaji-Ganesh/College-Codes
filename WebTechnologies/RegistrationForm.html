@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <link href="registrationForm-styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="RegistrationBox">
+            <form action="RegistrationSuccessful.html">
+                <fieldset>
+                    <h2> Registration Form </h2>
+                    <hr/>
+                    <input type="text" placeholder="First name" name="firstName" required>
+                    <input type="text" placeholder="Second name" name="secondName">
+                    <input type="text" placeholder="How should we call you?" name="userName" minLength=4 maxLength=20 required>
+                    <input type="email" placeholder="email address" name="emailId">
+                    <input type="number" placeholder="Mobile No" maxLength=10 minLength=10 name="mobileNo">
+                    <input type="password" placeholder="Pick a password" name="password" minLength=8 maxLength=20 pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{8,}" title="Must contain: A captial and a small case " required>
+                    <input type="password" placeholder="Re-enter password" name="confirmPassword" minLength=8 maxLength=20 pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{8,}" required><br/>
+                    <input type="submit" value="Submit">
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
