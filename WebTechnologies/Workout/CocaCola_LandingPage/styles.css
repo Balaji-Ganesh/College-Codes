@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,700,800,800&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: none;
+    padding: 0;
+    box-sizing: border-box
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #161616;
+}
+
+section .circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #e51e2a;
+    clip-path: circle(70% at right -20%)
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    position: relative;
+    max-width: 150px;
+}
+header .navigation{
+    position: relative;
+    display: flex;
+}
+header .navigation li{
+    list-style: none;
+}
+header .navigation li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.content{
+    position: relative;
+    width:100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+.content .textBox{
+    position: relative;
+    max-width: 600px; 
+    margin-right: 20px;
+}
+.content .textBox h2{
+    color:#fff;
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+    font-weight: 700;
+}
+.content .textBox p{
+    color: #fff;
+}
+.content .textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    background: #ef1e2a;
+    padding: 8px 20px;
+    background: #ef1e2a;
+    border-radius: 40px;
+    font-weight : 500;
+    letter-spacing: 1px
+}
+
+.socialSites{
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.socialSites li{
+    list-style: none
+}
+.socialSites a{
+    display: inline-block;
+    margin-left: 15px;
+    background: #222;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+.socialSites li a:hover{
+    background: #ef1e2a;
+    transform: translateY(-10px);
+}
+.socialSites li a img{
+    filter: invert(1);
+    transform: scale(0.5);
+}
+
+/***********Slider container.*/
+.slider-container{
+    width:100%;
+    padding-top: 50px;
+    padding-bottom:50px;
+}
+.slider-slide{
+    background-position: center;
+    background-size: cover;
+    width: 180px;
+    height: 460px;
+}
+.content .imageBox{
+    width: 500px;
+    display: flex;
+    justify-content: flex-end
+}
+.content .imageBox img{
+    position: relative;
+    max-width: 150px
+}
+
+/***if not did in JS code...slideShadows: false**
+
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow right{
+    background-image: none;
+}
+ 
+*/

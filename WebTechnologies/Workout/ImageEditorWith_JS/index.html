@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ImageEditor with JS</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <section class="main">
+            <div class="container">
+                <div class="main-outer">
+                    <div class="main-left">
+                        <h3>Image filters</h3>
+                        <!-- Form to place the user-interactions-->
+                        <form id="slider-form">
+                            <!--Placing the slider for "GrayScale Tuning"-->
+                            <p>
+                                <label for="grayScale"> Gray Scale</label>
+                                <input id="grayScale" name="grayScale" type="range" min="0" max="" value="0" class="slider">
+                            </p>
+
+                            <!--Placing the slider for "Blurness" tuning-->
+                            <p>
+                                <label for="blur"> Blur </label>
+                                <input id="blur" name="blur" type="range" min="0" max="" value="0" class="slider">
+                            </p>
+                            
+                            <!--Placing the slider for tuning the "Hueness"-->
+                            <p>
+                                <label for="hue"> Hue </label>
+                                <input id="hue" name="hue" type="range" min="0" max="" value="0" class="slider">
+                            </p>
+
+                            <!--Placing the slider to tune "Sepia"-->
+                            <p>
+                                <label for="grayScale"> Sepia</label>
+                                <input id="sepia" name="sepia" type="range" min="0" max="" value="0" class="slider">
+                            </p>
+
+                            <!--Can try for Brightness, Contrast, Opacity-->
+
+                            <button type="reset" id="reset">Reset </button>
+                        </form>
+                    </div>
+                    <div class="main-right">
+                        <form id="testForm">
+                            <input type="text" placeholder="Place Image URL here.." id="onlineURL">
+                            <button type="submit" id="changeImage">Change Image</button>
+                        </form>
+                        <div class="img-area">
+                            <img src="images/kellen-riggin-XICincpZ1HI-unsplash.jpg" id="targetImage" alt="A Image on which processing is applied">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+
+

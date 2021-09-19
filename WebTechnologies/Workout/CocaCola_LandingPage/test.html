@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+/*Slider (from GitGub Samples)*/
+.swiper-container{
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px; 
+}
+.swiper-slide{
+    background-position: center;
+    background-size: cover;
+    width: 180px;
+    height: 460px;
+    /*position: relative;*/
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+}
+.content .imageBox{
+    width: 500px;
+    display: flex;
+    justify-content: flex-end;
+}
+.content .imageBox img{
+    max-width: 150px; 
+}
+.swiper-slide img{
+    position: absolute; /*Working with relative..*/
+    bottom: 0;
+    max-height: 100%;
+}
+
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow right{
+    background-image: none;
+}
