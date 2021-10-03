@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Countdown timer</title>
+        <link href="styles_2.css" rel="stylesheet"> <!--Use styles_2.css for different style-->
+    </head>
+    <body onload="alert('Try using styles_2(or 1).css for different feel and look(and correspondingly change the h2-display-note)')">
+        <div class="container">
+            <div class="imageBox"></div>
+            <div class="countDownBox">
+                <h2><span>Countdown to New Year</span>  <!--<h2>Countdown to New Year<br/>-->
+                    2022                                <!--<span>20<i>22</i></span></h2>   for styles_1.css-->
+                </h2>
+                <div class="countDown">
+                    <div id="days">NA</div>
+                    <div id="hours">NA</div>
+                    <div id="minutes">NA</div>
+                    <div id="seconds">NA</div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const countDownDate = new Date('jan 1, 2022 00:00:00').getTime();
+            function newYear(){
+                const currentDate = new Date().getTime();
+                timeDifference = countDownDate - currentDate;
+                
+                // constants that help in calculating time difference..
+                const second = 1000;
+                const minute = second* 60;
+                const hour = minute*60;
+                const day = hour * 24;
+                
+                // Calculating the difference in days, hours, minutes and seconds..
+                const diff_days     = Math.floor( timeDifference / (day));
+                const diff_hours    = Math.floor((timeDifference % (day))    / (hour));
+                const diff_minutes  = Math.floor((timeDifference % (hour))   / (minute));
+                const diff_seconds  = Math.floor((timeDifference % (minute)) / (second));
+
+                // Write in the HTML tags, to finally display it..
+                document.getElementById("days").innerText    = diff_days;
+                document.getElementById("hours").innerText   = diff_hours;
+                document.getElementById("minutes").innerText = diff_minutes;
+                document.getElementById("seconds").innerText = diff_seconds;
+            }
+
+            // time to call the function..
+            setInterval(()=>newYear(), 1000);
+        </script>
+    </body>
+</html>
+
+<!--Help: 
+        styles_1.css
+            https://youtu.be/OB6fma8fmb8 
+        styles_2.css
+            'Online-tutorials Youtube'
+    done on 3rd October, 2021 ~ Sunday
+-->

@@ -1,0 +1,146 @@
+@import url('https:fonts.googleapis.com/css?family=Poppins:200,300,400,500,700,800,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: grid;
+    justify-content: end;
+    align-content: end;
+    min-height: 100vh;
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #3044a5; 
+    
+}
+
+footer .container{
+    width: 100%;
+    display: grid;
+     grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+footer .container .section h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .container .section h2::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #ffeb3b
+}
+
+footer .container .section p{
+    color: #fff;
+}
+footer .container .section .socialSites{
+    margin-top:20px;
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-gap: 10px;
+}
+footer .container .section .socialSites li{
+    list-style: none;
+}
+.section .socialSites li a{
+    display:inline-block;
+    width: 48px;
+    height: 48px;
+    background: #3e56cb;
+    display: grid;
+    justify-content: center;
+    align-items: center; 
+    text-decoration: none;
+    border-radius: 5px; 
+}
+.section .socialSites li a:hover{
+    background: #6380fe;
+}
+footer .info{
+    position: relative
+}
+.section li a .fa{
+    color: #fff;
+    font-size: 20px;
+}
+
+footer .section li{
+    list-style: none;
+}
+footer .section li a{
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+    color: #f7f7f7;
+}
+footer .section li a:hover{
+    color: #ffeb3b
+}
+
+footer .section .info{
+    position: relative;
+}
+footer .section .info li{
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    margin-bottom: 15px;
+}
+.info li span:nth-child(1){
+    color: #fff;
+    font-size: 20px;
+}
+.info li span{
+    color: #fff;
+}
+.info a{
+    color: #f7f7f7;
+    text-decoration: none;
+}
+
+.info a:hover{
+    color: #ffeb3b;
+}
+
+/*Copy right contents..*/
+.copyRightsText{
+    width: 100%;
+    background: #1f3389;
+    padding: 8px 100px;
+    text-align: center;
+    color: #fff
+}
+
+/**Time to make it responsive...*/
+@media(max-width: 991px){
+    footer{
+        padding: 40px
+    }
+    footer .container{
+        grid-template-columns: repeat(2, 1fr)
+    }
+    .copyRightsText{
+        padding: 8px 40px
+    }
+}
+
+@media(max-width: 768px){
+    footer .container{
+        grid-template-columns: repeat(1, 1fr)
+    }
+}

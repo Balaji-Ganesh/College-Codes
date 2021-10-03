@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+*{
+    font-family: 'Poppins', 'sans-serif';
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #ff4e2b;
+    display: flex;
+}
+
+.container .imageBox{
+    position: relative;
+    width: 450px;
+    height: 100%;
+    background: url(pexels-jonas-kakaroto-736230.jpg);
+    background-size: cover;
+}
+/*Styling the display note of countdown timer*/
+.container .countDownBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;/*calc(100%-450px); */ /**The 450 is of the imageBox's width*/
+}
+
+.container .countDownBox h2{
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 4px;
+    font-weight: 500;
+    line-height: 4em;
+} 
+.container .countDownBox h2 span{
+    font-size: 6em;
+    font-weight: 700;
+}
+/*Styling the parts of timer (hours, minutes....)*/
+.container .countDownBox h2 span i{
+    font-style: initial;
+    color: #ff0;
+}
+.container .countDownBox .countDown{   
+    margin-top: 30px; 
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .countDownBox .countDown div{
+    position: relative;
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 500;
+    margin: 0 15px;
+    margin-top: -25px;
+}
+/*for the bottom-text of count-down clip pads*/
+.container .countDownBox .countDown div:before{
+    content: 'text';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    color: #fff;
+    font-size: 0.34em;
+    font-weight: 500;
+    line-height: 35px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.container .countDownBox .countDown div#days:before{
+    content:'days';
+}
+.container .countDownBox .countDown div#hours:before{
+    content:'hours';
+}
+.container .countDownBox .countDown div#minutes:before{
+    content:'minutes';
+}
+.container .countDownBox .countDown div#seconds:before{
+    content:'seconds';
+}
+.container .countDownBox .countDown div#seconds,
+.container .countDownBox .countDown div#seconds:before{
+    color: #ff0;
+}
+
+/**Time to make it responsive..*/
+@media(max-width: 991px){
+    .container .imageBox{
+        display:none;   /*Hiding the image*/
+    }
+    .container .countDownBox{
+        width: 100%;    /*As the image made to hidden, remove is width too..*/
+    }
+}
+@media(max-width: 600px){
+    .container .countDownBox h2{
+        font-size: 1.1em;
+    }
+    .container .countDownBox .countDown{
+        height: 100px; 
+    }
+    .container .countDownBox .countDown div{
+        width: 80px;
+        font-size: 2dm;
+        marign: 0;
+        margin-top: -25px;
+    }
+}

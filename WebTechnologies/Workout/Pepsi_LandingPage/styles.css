@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,700,800,800&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: none;
+    padding: 0;
+    box-sizing: border-box
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0062be;
+    transition: 0.5s;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+header .logoImg{
+    position: relative;
+    max-width: 80px;
+}
+header ul{
+    position: relative;
+    display: flex;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 40px;
+    font-weight: 400;
+    color: #fff;
+}
+
+section .content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section .content .textBox{
+    position: relative;
+    width: 450px; /* but sir gave as 600px.. may be decided w.r.t. device..*/
+}
+section .content .textBox h2{
+    color: #fff;
+    font-size: 4em;
+    line-height: 1.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+section .content .textBox h2 span{
+    font-size: 2em;
+}
+section .content .textBox p{
+    color: #fff;
+}
+section .content .textBox a{
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 20px;
+    background: #fff;
+    color: #111;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+section .imgBox{
+    width: 600px;
+    display: flex;
+    padding-right: 50px;
+    justify-content: flex-end;
+    margin-top: 50px;
+}
+.content .imgBox img{
+    max-width: 260px;
+}
+
+.thumb{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+}
+.thumb li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.thumb li:hover{
+    transform: translateY(-15%);
+}
+.thumb li img{
+    max-width: 40px
+}
+
+.socialSites{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.socialSites li{
+    list-style: none;
+}
+.socialSites li a{
+    display: inline-block;
+    filter: invert(1);
+    margin: 5px 0;
+    transform: scale(0.6);
+}
