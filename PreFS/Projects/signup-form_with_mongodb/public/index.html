@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <link href="styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="RegistrationBox">
+            <form action="/signup" method="POST">   <!--"/signup" should be same as the route in index.js, and method as POST, as working via post method-->
+                <fieldset>
+                    <h2> Sign Up </h2>
+                    <hr/>   <!--Make sure that, the "name" attribute of the below tags are as per contract in index.js-->
+                    <input type="text" placeholder="Name" name="name">
+                    <input type="email" placeholder="e-mail" name="email">
+                    <input type="number" placeholder="Mobile No" maxLength=10 minLength=10 name="phone">
+                    <input type="password" placeholder="Password" name="password" minLength=8 maxLength=20 pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{8,}" title="Must contain: A captial and a small case " required><br/>
+                    <input type="submit" value="Submit">    <!-- When this button is clicked, the entered HTML data is sent-->
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
