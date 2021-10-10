@@ -1,0 +1,27 @@
+# Dependencies..
+$ npm install express ejs
+
+# For development..
+$ npm i --save-dev nodemon dotenv
+
+
+$ npm install bcrypt        # for comparing and hashing the passwords..
+
+------------
+Checking and validating the user-details is not so complex, but making it work it for every field, need some more involvement.
+So, will be using *Passport.js* for that..
+$npm i passport
+       passport-local   # The local version allows us to use usernames, passwords for loggin it.. and it also has ways like Google, facebook..
+       express-session  # In order to persist the user across, need a session for that.
+       express-flash    # To display messages like ""Failure:...". Even the passport uses it internally, for wrong-email, pwd...
+-----------------
+
+In order to logout, need to call via DELETE method, but its not supported by <form>. So...
+$ npm i method-override     # This allows us to override the methods, as instead of using POST can use DELETE
+
+=========================================================== THE END =======================================================
+
+src:    Node.js Passport Login System Tutorial by  "Web Dev Simplified"
+        https://youtu.be/-RCnNyD0L-s
+
+Done on: 9th October, 2021 ~ Sunday_2

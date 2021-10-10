@@ -1,0 +1,13 @@
+<h1>Login</h1>
+<% if(messages.error){ // How the messages are set..?? `flash` does it. and `error` set(by passport) as per the done()'s @param-3 in `passport-fonfig.js%>
+    <% // If any such error, render it..%>
+    <%=  messages.error %>
+    <%}%>
+<form action="/login" method="POST">
+    <div>
+        <label for="email">email</label>  <input type="email" id="email" name="email" required>
+        <label for="password">Password</label>  <input type="password" id="name" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+</form>
+<a href="/register">Register</a>
