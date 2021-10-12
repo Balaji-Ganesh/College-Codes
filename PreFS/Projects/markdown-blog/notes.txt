@@ -1,0 +1,139 @@
+# Installing the required packages
+$ npm install express mongoose ejs  # ejs for different views.
+
+# Installing the dev dependencies..
+$ npm install --save-dev nodemon
+
+$ npm i marked slugify          # slugify, to use the name of the article's title instead of ids...
+                                # marked is to cvt from markdown to HTML
+
+# npm i method-override         # as form allows to have GET or POST methods, but we need to DELETE. This library allows us to override GET/POST for our purpose.
+                                # refer to [1] below at lookups...
+
+// Turn of mark-down..
+# npm i dompurify               # In-order to prevent the writing of malicious code and run. So to prify this..  
+        jsdom                   # To render HTML via JS, as NodeJS can't. 
+
+
+Some bug fixes.. ............. currently working fine (refer /working-screenshots directory..) .. but MAY GET some issues later.
+        So, be careful in re-using the code.
+In router > articles.js
+Should be like
+    // for deletion of the articles..   Cannot DELETE /articles/616557bd31faeded35d69d90 -- "method-override" is functioning well.. replaced by DELETE even when set to method="POST"
+    router.delete('/:id', ...
+            ref: https://youtu.be/1NrHkjlWVhM?t=3089 (final working... with the changes as they need to be)
+    But used POST method, and modified the route like..
+        router.post('/delete/:id', 
+
+
+Should be like
+        // for editiing..            Cannot PUT /articles/616557bd31faeded35d69d90           -- same for edit too... looks like, need to know background functioning..
+        router.put('/:id', ...
+    
+    But used POST method, and modified the route like..
+        router.post('/edit/:id', 
+
+        further lookup: https://youtu.be/1NrHkjlWVhM?t=3416 (starting..)
+
+
+       
+Running the mongodb..  ---------~!!! Running the mongodb before `nodemon server.js` or `npm run devStart` -- is recommended (as without which it failed to work as expected to be)
+---------------------------------------------------------------------------------------------------------
+    Try: (src: https://docs.mongodb.com/manual/tutorial/install-mongodb-enterprise-on-ubuntu-tarball/) -- as installed via tarball, not via `sudo apt-get...`
+        $ mongod --dbpath /var/lib/mongo --logpath /var/log/mongodb/mongod.log --fork
+            gives a return message like...
+                about to fork child process, waiting until server is ready for connections.
+                forked process: 60997
+                child process started successfully, parent exiting
+
+    
+    this will mostly start..
+    if not try (src: https://stackoverflow.com/questions/37014186/running-mongodb-on-ubuntu-16-04-lts)
+        
+        To start mongodb..
+            $ sudo systemctl start mongodb
+        To stop
+            $ sudo systemctl stop mongodb
+        To enable mongodb on startup
+            $ sudo systemctl enable mongodb.service
+        If you need to refresh the services use:
+            $ sudo systemctl daemon-reload
+
+
+
+
+
+
+
+
+
+
+
+Possible errors and their fixes..
+-----------------------------------------------------
+[1] Error: 
+        const utf8Encoder = new TextEncoder();
+                            ^
+
+        ReferenceError: TextEncoder is not defined
+            at Object.<anonymous> (/media/krishna/WorkAndWorkResources/HelloWorld/College/3rdYear_1stSem/PreFS/Projects/markdown-blog/node_modules/whatwg-url/dist/encoding.js:2:21)
+            at Module._compile (internal/modules/cjs/loader.js:778:30)
+            at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+            at Module.load (internal/modules/cjs/loader.js:653:32)
+            at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+            at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+            at Module.require (internal/modules/cjs/loader.js:692:17)
+            at require (internal/modules/cjs/helpers.js:25:18)
+            at Object.<anonymous> (/media/krishna/WorkAndWorkResources/HelloWorld/College/3rdYear_1stSem/PreFS/Projects/markdown-blog/node_modules/whatwg-url/dist/url-state-machine.js:5:34)
+            at Module._compile (internal/modules/cjs/loader.js:778:30)
+        [nodemon] app crashed - waiting for file changes before starting...
+    FIX: (ref: https://stackoverflow.com/questions/69187442/const-utf8encoder-new-textencoder-in-node-js)
+        * Open your encoding.js folder in node_modules>whatwg-url>dist and change to.. 
+            const util = require('util')
+            const utf8Encoder = new util.TextEncoder();
+            const utf8Decoder = new util.TextDecoder("utf-8", { ignoreBOM: true });
+
+        from 
+            "use strict";
+            const utf8Encoder = new TextEncoder();
+            const utf8Decoder = new TextDecoder("utf-8", { ignoreBOM: true });
+
+[2] npm freezing at .............. loadIdealTree:  ., ......... while installing.
+    Tried fix:
+        Removing the `package-lock.json`    --- but didn't worked.
+    * Later, removed both the node and npm and re-installed, -------- still not worked...
+    * Then,,,,tried.. 
+            $ whereis node  
+            $ whereis npm
+        and removed those directories...
+        then...
+            $ sudo apt update
+            $ sudo apt install nodejs npm
+            $ node --version
+            v10.19.0
+            $ npm --version
+            6.14.4
+
+            Earlier versions was 16.XX... for node and 8.10.X for npm........ -- which gave error.
+
+==============================================================================================================================
+
+Final report:
+---------------
+    * Good.
+    * Can extend to the project of `e-auction_system`.
+
+    Required updates(fixes):
+        * As listed above.. for DELETE and PUT methods..
+    
+lookup sources..
+[1] Should PUT and DELETE be used in forms?
+    https://stackoverflow.com/questions/5162960/should-put-and-delete-be-used-in-forms
+
+
+=============================================================================================================================
+Done on: (with the blessings)
+    11th, 12th October, 2021 ~ Sunday and Saturday.
+    With reference: 
+        Youtube: [Web Dev Simplified] How To Build A Markdown Blog Using Node.js, Express, And MongoDB
+        https://youtu.be/1NrHkjlWVhM
