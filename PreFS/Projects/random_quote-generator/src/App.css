@@ -1,0 +1,58 @@
+#root, html, body{
+    margin: 0;
+    padding: 0; 
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.app{
+    height: 100%;
+    background: linear-gradient(rgba(26, 97, 4, 0.3), rgba(230, 145, 76, 0.3) ), url('./images/sean-105m46GatAg-unsplash.jpg');
+    background-size: cover;                 /*Let the background span the screen*/
+    /*  Centering content. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card{
+    background-color: whitesmoke;
+    width: 40%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 25px;
+    padding: 2px;
+    box-shadow: 10px 10px 10px darkgreen
+}
+
+.quote{
+    display: flex;
+    align-items: center;
+    height: 580px;
+    font-family: 'Playfair Display', serif;
+}
+/*
+.app .card .button{
+    font-family: 'Playfair Display', serif;
+    font-size: .7em;
+    margin: 5px;
+    border: 1px darkgrey solid;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.app .card .button:hover{
+    cursor: pointer;
+    background-color: rgba(238, 222, 222, 0.904);
+}*/
+@media only screen and(max-width:600px){
+    .card{
+        width: 80%;
+        height: 50%; 
+    }
+}
